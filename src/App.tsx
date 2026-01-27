@@ -12,6 +12,7 @@ import WordPressHosting from "./pages/hosting/WordPressHosting";
 import DedicatedServers from "./pages/hosting/DedicatedServers";
 import ResellerHosting from "./pages/hosting/ResellerHosting";
 import EmailHosting from "./pages/hosting/EmailHosting";
+import DomainServices from "./pages/DomainServices";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/hosting/dedicated" element={<DedicatedServers />} />
           <Route path="/hosting/reseller" element={<ResellerHosting />} />
           <Route path="/hosting/email" element={<EmailHosting />} />
+          <Route path="/domains" element={<DomainServices />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
