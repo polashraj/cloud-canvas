@@ -31,10 +31,10 @@ const navItems: NavItem[] = [
     label: "Domains",
     icon: Globe,
     items: [
-      { label: "Domain Registration", href: "#" },
-      { label: "Domain Transfer", href: "#" },
-      { label: "Pricing", href: "#" },
-      { label: "DNS Management", href: "#" },
+      { label: "Domain Registration", href: "/domains" },
+      { label: "Domain Transfer", href: "/domains" },
+      { label: "Pricing", href: "/domains" },
+      { label: "DNS Management", href: "/domains" },
     ]
   },
   {
