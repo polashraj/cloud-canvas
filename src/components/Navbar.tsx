@@ -2,31 +2,69 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Server, Globe, Shield, Building, LifeBuoy, BookOpen, Users } from "lucide-react";
 
-const navItems = [
+interface NavSubItem {
+  label: string;
+  href: string;
+}
+
+interface NavItem {
+  label: string;
+  icon: typeof Server;
+  items: NavSubItem[];
+}
+
+const navItems: NavItem[] = [
   {
     label: "Hosting",
     icon: Server,
-    items: ["Shared Hosting", "WordPress Hosting", "VPS Hosting", "Dedicated Servers", "Reseller Hosting", "Cloud Hosting", "Email Hosting"]
+    items: [
+      { label: "Shared Hosting", href: "/hosting/shared" },
+      { label: "WordPress Hosting", href: "/hosting/wordpress" },
+      { label: "VPS Hosting", href: "/hosting/vps" },
+      { label: "Dedicated Servers", href: "/hosting/dedicated" },
+      { label: "Reseller Hosting", href: "/hosting/reseller" },
+      { label: "Cloud Hosting", href: "/hosting/cloud" },
+      { label: "Email Hosting", href: "/hosting/email" },
+    ]
   },
   {
     label: "Domains",
     icon: Globe,
-    items: ["Domain Registration", "Domain Transfer", "Pricing", "DNS Management"]
+    items: [
+      { label: "Domain Registration", href: "#" },
+      { label: "Domain Transfer", href: "#" },
+      { label: "Pricing", href: "#" },
+      { label: "DNS Management", href: "#" },
+    ]
   },
   {
     label: "Security",
     icon: Shield,
-    items: ["SSL Certificates", "Backup Solutions", "DDoS Protection"]
+    items: [
+      { label: "SSL Certificates", href: "#" },
+      { label: "Backup Solutions", href: "#" },
+      { label: "DDoS Protection", href: "#" },
+    ]
   },
   {
     label: "Business",
     icon: Building,
-    items: ["Startup Hosting", "E-commerce Hosting", "Corporate Email", "Enterprise Cloud"]
+    items: [
+      { label: "Startup Hosting", href: "#" },
+      { label: "E-commerce Hosting", href: "#" },
+      { label: "Corporate Email", href: "#" },
+      { label: "Enterprise Cloud", href: "#" },
+    ]
   },
   {
     label: "Support",
     icon: LifeBuoy,
-    items: ["Knowledge Base", "FAQs", "Contact Support", "Server Status"]
+    items: [
+      { label: "Knowledge Base", href: "#" },
+      { label: "FAQs", href: "#" },
+      { label: "Contact Support", href: "#" },
+      { label: "Server Status", href: "#" },
+    ]
   },
 ];
 
@@ -65,11 +103,11 @@ export function Navbar() {
                     <div className="card-gradient border border-border rounded-xl p-2 min-w-[200px] shadow-lg">
                       {item.items.map((subItem) => (
                         <a
-                          key={subItem}
-                          href="#"
+                          key={subItem.label}
+                          href={subItem.href}
                           className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
                         >
-                          {subItem}
+                          {subItem.label}
                         </a>
                       ))}
                     </div>
@@ -106,11 +144,11 @@ export function Navbar() {
                 <div className="pl-8 space-y-1">
                   {item.items.map((subItem) => (
                     <a
-                      key={subItem}
-                      href="#"
+                      key={subItem.label}
+                      href={subItem.href}
                       className="block py-1.5 text-sm text-muted-foreground hover:text-primary"
                     >
-                      {subItem}
+                      {subItem.label}
                     </a>
                   ))}
                 </div>
