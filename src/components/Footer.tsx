@@ -17,22 +17,22 @@ const footerLinks = {
     "DNS Management",
   ],
   "Security": [
-    "SSL Certificates",
-    "Backup Solutions",
-    "DDoS Protection",
+    { label: "SSL Certificates", href: "/security/ssl" },
+    { label: "Backup Solutions", href: "/security/backup" },
+    { label: "DDoS Protection", href: "/security/ddos" },
   ],
   "Company": [
-    "About Us",
-    "Careers",
-    "Contact",
-    "Blog",
-    "Affiliate Program",
+    { label: "About Us", href: "#" },
+    { label: "Careers", href: "#" },
+    { label: "Contact", href: "/support/contact" },
+    { label: "Blog", href: "#" },
+    { label: "Affiliate Program", href: "#" },
   ],
   "Support": [
-    "Knowledge Base",
-    "FAQs",
-    "Contact Support",
-    "Server Status",
+    { label: "Knowledge Base", href: "/support/knowledge-base" },
+    { label: "FAQs", href: "#" },
+    { label: "Contact Support", href: "/support/contact" },
+    { label: "Server Status", href: "/support/status" },
   ],
 };
 
@@ -79,16 +79,21 @@ export function Footer() {
             <div key={category}>
               <h4 className="font-semibold text-foreground mb-4 text-sm">{category}</h4>
               <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const isObj = typeof link === "object";
+                  const key = isObj ? link.label : link;
+                  const href = isObj ? link.href : "#";
+                  return (
+                    <li key={key}>
+                      <a
+                        href={href}
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {key}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

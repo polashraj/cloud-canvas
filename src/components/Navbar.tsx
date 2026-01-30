@@ -41,29 +41,29 @@ const navItems: NavItem[] = [
     label: "Security",
     icon: Shield,
     items: [
-      { label: "SSL Certificates", href: "#" },
-      { label: "Backup Solutions", href: "#" },
-      { label: "DDoS Protection", href: "#" },
+      { label: "SSL Certificates", href: "/security/ssl" },
+      { label: "Backup Solutions", href: "/security/backup" },
+      { label: "DDoS Protection", href: "/security/ddos" },
     ]
   },
   {
     label: "Business",
     icon: Building,
     items: [
-      { label: "Startup Hosting", href: "#" },
-      { label: "E-commerce Hosting", href: "#" },
-      { label: "Corporate Email", href: "#" },
-      { label: "Enterprise Cloud", href: "#" },
+      { label: "Startup Hosting", href: "/business/startup" },
+      { label: "E-commerce Hosting", href: "/business/ecommerce" },
+      { label: "Corporate Email", href: "/business/email" },
+      { label: "Enterprise Cloud", href: "/business/enterprise" },
     ]
   },
   {
     label: "Support",
     icon: LifeBuoy,
     items: [
-      { label: "Knowledge Base", href: "#" },
+      { label: "Knowledge Base", href: "/support/knowledge-base" },
       { label: "FAQs", href: "#" },
-      { label: "Contact Support", href: "#" },
-      { label: "Server Status", href: "#" },
+      { label: "Contact Support", href: "/support/contact" },
+      { label: "Server Status", href: "/support/status" },
     ]
   },
 ];
